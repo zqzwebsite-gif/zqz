@@ -1,0 +1,18 @@
+<!-- کدهای زیر را داخل تگ <head> سایت خود قرار دهید -->
+<meta name="theme-color" content="#4f46e5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="ZQZ لینک">
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+
+<!-- اسکریپت ثبت سرویس‌ورکر (PWA Service Worker) -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then((reg) => console.log('اپلیکیشن با موفقیت ثبت شد:', reg.scope))
+        .catch((err) => console.error('خطا در ثبت سرویس‌ورکر:', err));
+    });
+  }
+</script>
